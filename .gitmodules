@@ -1,0 +1,3 @@
+[submodule "giphy-input"]
+	path = giphy-input
+	url = https://github.com/Svol-Enterprise/giphy-input
