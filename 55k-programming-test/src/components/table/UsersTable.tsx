@@ -1,10 +1,10 @@
 import React from 'react'
-import { type TableProps } from '../types/table'
+import { type TableProps } from '../../types/table'
 import './UsersTable.css'
-const UsersTable: React.FC<TableProps> = ({ users }) => {
+const UsersTable: React.FC<TableProps> = ({ users, colors }) => {
   return (
     <div className='table-container'>
-        <table className='table'>
+        <table className={colors ? 'table-colored' : 'table'}>
             <thead className='table-head'>
                 <tr>
                     <th>Photo</th>

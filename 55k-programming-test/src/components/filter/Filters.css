@@ -1,0 +1,19 @@
+.btn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 8px 30px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn:active{
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
