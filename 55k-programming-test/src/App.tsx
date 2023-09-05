@@ -11,23 +11,20 @@ function App () {
   const originalUsers = useRef<usersData[]>([])
   const fetchUsers = async () => {
     const response = await usersFetch()
-    return response
+    setUsers(response.results)
+    originalUsers.current = response.results
   }
   useEffect(() => {
-    fetchUsers().then((res) => {
-      setUsers(res.results)
-      console.log(res.results)
-      originalUsers.current = res.results
-    }).catch((err) => { console.log(err) })
+    fetchUsers().then(() => { console.log(users) }).catch((e) => { console.log(e) })
   }, [])
   return (
     <div className="App">
       <h1 className='page-title'>Prueba Técnica</h1>
       <nav>
-        <Filters setColors={setColors} />
+        <Filters setColors={setColors} originalUsers={originalUsers} setUsers={setUsers} users={users} />
       </nav>
       <main className='table-call'>
-      <UsersTable users={users} colors={colors} />
+      <UsersTable users={users} colors={colors} setUsers={setUsers} />
       </main>
     </div>
   )
