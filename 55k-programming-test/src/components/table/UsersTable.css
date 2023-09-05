@@ -3,10 +3,16 @@
     font-weight: 800;
 }
 
-.table-body {
+.table-body, .table-colored {
     font-family: 'Caveat', cursive;
     font-size: 19px;
     font-weight: 500;
+}
+
+.img-td {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .table-container {
@@ -17,7 +23,7 @@
     align-items: center;
 }
 
-.table, .table-colored {
+.table {
     width: 100%;
     text-align: center;
 }

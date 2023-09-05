@@ -1,9 +1,7 @@
 import React from 'react'
 import './Filters.css'
+import { type FiltersProps } from '../../types/filter'
 
-interface FiltersProps {
-  setColors: React.Dispatch<React.SetStateAction<boolean>>
-}
 const Filters: React.FC<FiltersProps> = ({ setColors }) => {
   const useColors = () => {
     setColors((prev) => !prev)

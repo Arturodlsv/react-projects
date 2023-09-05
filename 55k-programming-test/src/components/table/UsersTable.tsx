@@ -4,7 +4,7 @@ import './UsersTable.css'
 const UsersTable: React.FC<TableProps> = ({ users, colors }) => {
   return (
     <div className='table-container'>
-        <table className={colors ? 'table-colored' : 'table'}>
+        <table className={'table'}>
             <thead className='table-head'>
                 <tr>
                     <th>Photo</th>
@@ -14,10 +14,10 @@ const UsersTable: React.FC<TableProps> = ({ users, colors }) => {
                     <th>Actions</th>
                 </tr>
             </thead>
-            <tbody className='table-body'>
+            <tbody className={colors ? 'table-colored' : 'table-body'}>
             {users.map((user) => (
                 <tr key={user.cell}>
-                    <td>
+                    <td className='img-td'>
                         <img width={60} src={user.picture.large} alt={user.name.first} />
                     </td>
                     <td>{user.name.first}</td>
