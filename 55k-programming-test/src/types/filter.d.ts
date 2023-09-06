@@ -7,6 +7,6 @@ interface FiltersProps {
   users: usersData[]
 }
 
-type FilterValues = 'name' | 'country' | 'lastname' | undefined
+type isCountry = boolean
 
-export type { FiltersProps, FilterValues }
+export type { FiltersProps, isCountry }

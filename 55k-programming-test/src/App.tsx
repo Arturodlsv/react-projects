@@ -9,6 +9,7 @@ function App () {
   const [users, setUsers] = useState<usersData[]>([])
   const [colors, setColors] = useState<boolean>(false)
   const originalUsers = useRef<usersData[]>([])
+
   const fetchUsers = async () => {
     const response = await usersFetch()
     setUsers(response.results)
@@ -21,7 +22,7 @@ function App () {
     <div className="App">
       <h1 className='page-title'>Prueba Técnica</h1>
       <nav>
-        <Filters setColors={setColors} originalUsers={originalUsers} setUsers={setUsers} users={users} />
+        <Filters setColors={setColors} originalUsers={originalUsers} setUsers={setUsers} users={users}/>
       </nav>
       <main className='table-call'>
       <UsersTable users={users} colors={colors} setUsers={setUsers} />

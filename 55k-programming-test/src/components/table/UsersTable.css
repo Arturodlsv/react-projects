@@ -35,3 +35,7 @@
 .table-colored tr:nth-child(even) {
     background-color: #fff;
 }
+
+.delete-btn {
+    cursor: pointer;
+}
