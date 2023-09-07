@@ -2,7 +2,7 @@ import React from 'react'
 import { type TableProps } from '../../types/table'
 import './UsersTable.css'
 import DeleteIcon from './icons/DeleteIcon'
-const UsersTable: React.FC<TableProps> = ({ users, colors, setUsers }) => {
+const UsersTable: React.FC<TableProps> = ({ users, colors, setUsers, setIsCountry }) => {
   const FilteringByName = () => {
     const sortUsers = () => {
       const sortedUsers = [...users].sort((a, b) => a.name.first.localeCompare(b.name.first))
@@ -20,15 +20,12 @@ const UsersTable: React.FC<TableProps> = ({ users, colors, setUsers }) => {
   }
 
   const FilteringByCountry = () => {
-    const sortUsers = () => {
-      const sortedUsers = [...users].sort((a, b) => a.location.country.localeCompare(b.location.country))
-      setUsers(sortedUsers)
-    }
-    sortUsers()
+    setIsCountry(2)
   }
 
   const deleteUser = (cell: string) => {
     setUsers(users.filter((user) => user.cell !== cell))
+    console.log(users)
   }
   return (
     <div className='table-container'>
