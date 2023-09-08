@@ -5,6 +5,7 @@ interface TableProps {
   colors: boolean
   setUsers: React.Dispatch<React.SetStateAction<usersData[]>>
   setIsCountry: React.Dispatch<React.SetStateAction<number>>
+  handleDelete: (cell: string) => void
 }
 
 export type { TableProps }

@@ -19,8 +19,17 @@ function App () {
   useEffect(() => {
     fetchUsers().then(() => { console.log(users) }).catch((e) => { console.log(e) })
   }, [])
+
+  const handleDelete = (cell: string) => {
+    const filteredUsers = users.filter((user) => user.cell !== cell)
+    setUsers(filteredUsers)
+  }
   const sortedUsers = useMemo(() => {
-    return isCountry === 2 ? [...users].sort((a, b) => { return a.location.country.localeCompare(b.location.country) }) : users
+    if (isCountry === 2) {
+      return [...users].sort((a, b) => a.location.country.localeCompare(b.location.country))
+    } else {
+      return [...users]
+    }
   }, [isCountry, users])
   return (
     <div className="App">
@@ -29,7 +38,7 @@ function App () {
         <Filters setColors={setColors} originalUsers={originalUsers} setUsers={setUsers} users={sortedUsers} setIsCountry={setIsCountry} isCountry={isCountry} />
       </nav>
       <main className='table-call'>
-      <UsersTable users={sortedUsers} colors={colors} setUsers={setUsers} setIsCountry={setIsCountry}/>
+      <UsersTable users={sortedUsers} colors={colors} setUsers={setUsers} setIsCountry={setIsCountry} handleDelete={handleDelete} />
       </main>
     </div>
   )
