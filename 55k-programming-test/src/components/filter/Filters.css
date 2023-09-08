@@ -24,3 +24,12 @@
     align-items: center;
     gap: 20px;
 }
+
+.input-search {
+    width: 200px;
+    font-size: 15px;
+    padding-top: 2px;
+    border-radius: 5px;
+    text-align: center;
+    font-style: italic;
+}
