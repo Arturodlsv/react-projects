@@ -7,6 +7,7 @@ interface FiltersProps {
   users: usersData[]
   setIsCountry: React.Dispatch<React.SetStateAction<number>>
   isCountry: number
+  setSearchCountry: React.Dispatch<React.SetStateAction<string>>
 }
 
 type isCountry = boolean

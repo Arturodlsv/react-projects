@@ -3,6 +3,7 @@ import { type TableProps } from '../../types/table'
 import './UsersTable.css'
 import DeleteIcon from './icons/DeleteIcon'
 const UsersTable: React.FC<TableProps> = ({ users, colors, setUsers, setIsCountry, handleDelete }) => {
+  // this function will sort by name in alphabetical order
   const FilteringByName = () => {
     const sortUsers = () => {
       const sortedUsers = [...users].sort((a, b) => a.name.first.localeCompare(b.name.first))
@@ -11,6 +12,7 @@ const UsersTable: React.FC<TableProps> = ({ users, colors, setUsers, setIsCountr
     sortUsers()
   }
 
+  // this function will sort by last name in alphabetical order
   const FilteringByLast = () => {
     const sortUsers = () => {
       const sortedUsers = [...users].sort((a, b) => a.name.last.localeCompare(b.name.last))
@@ -18,7 +20,7 @@ const UsersTable: React.FC<TableProps> = ({ users, colors, setUsers, setIsCountr
     }
     sortUsers()
   }
-
+  // this function will sort by country
   const FilteringByCountry = () => {
     setIsCountry(2)
   }

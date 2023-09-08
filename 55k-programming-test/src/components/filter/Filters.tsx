@@ -2,7 +2,7 @@ import React from 'react'
 import './Filters.css'
 import { type FiltersProps } from '../../types/filter'
 
-const Filters: React.FC<FiltersProps> = ({ setColors, originalUsers, setUsers, setIsCountry, isCountry }) => {
+const Filters: React.FC<FiltersProps> = ({ setColors, originalUsers, setUsers, setIsCountry, isCountry, setSearchCountry }) => {
   const FilteringByCountry = () => {
     isCountry === 2
       ? setIsCountry(1)
@@ -22,6 +22,9 @@ const Filters: React.FC<FiltersProps> = ({ setColors, originalUsers, setUsers, s
         <button className='btn' onClick={() => {
           setUsers(originalUsers.current)
         }}> Reset State </button>
+        <input type="text" onChange={(e) => {
+          setSearchCountry(e.target.value)
+        }} />
     </div>
   )
 }
