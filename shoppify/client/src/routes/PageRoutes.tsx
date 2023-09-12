@@ -7,7 +7,7 @@ const PageRoutes = () => {
     <Router>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/search' element={<SearchView />} />
+        <Route path='/items' element={<SearchView />} />
       </Routes>
     </Router>
   )

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import SearchInput from '../components/SearchInput'
 import TruckPnG from '../assets/truck.png'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, createSearchParams } from 'react-router-dom'
 
 const Home = () => {
   const Navigate = useNavigate()
@@ -19,7 +19,7 @@ const Home = () => {
           <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         </nav>
         <section className="flex justify-center items-center">
-          <button className="bg-blue-500 active:bg-blue-800 duration-200 text-white font-bold py-2 px-4 rounded" onClick={() => { Navigate('/search') }}>
+          <button className="bg-blue-500 active:bg-blue-800 duration-200 text-white font-bold py-2 px-4 rounded" onClick={() => { Navigate({ pathname: '/items', search: createSearchParams({ search: searchTerm }).toString() }) }}>
             Search
           </button>
         </section>
