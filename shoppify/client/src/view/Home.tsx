@@ -1,14 +1,14 @@
 import { useState } from 'react'
 import SearchInput from '../components/SearchInput'
-import ImageBan from '../assets/bam.jpg'
+import TruckPnG from '../assets/truck.png'
 
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState<string>('')
   return (
-    <div className={ searchTerm === '' ? 'h-screen w-full flex justify-center items-center' : 'h-screen w-full'}>
-      <header className="w-full pb-[240px] flex justify-center flex-col gap-4">
-        <section className='overflow-hidden rounded-sm flex justify-center items-center'>
-          <img src={ImageBan} className='w-3/5 shadow-md' alt="" />
+    <div className="h-screen w-full flex justify-center items-center">
+      <header className="w-full pb-[240px] flex justify-center flex-col gap-4 overflow-hidden">
+        <section className="overflow-hidden flex justify-center items-center">
+          <img src={TruckPnG} width={150} className="overflow-hidden" alt="" />
         </section>
         <section>
           <h1 className="text-center text-3xl">Shofu Online</h1>
@@ -16,6 +16,11 @@ const Home = () => {
         <nav>
           <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         </nav>
+        <section className="flex justify-center items-center">
+          <button className="bg-blue-500 active:bg-blue-800 duration-200 text-white font-bold py-2 px-4 rounded">
+            Search
+          </button>
+        </section>
       </header>
     </div>
   )
