@@ -16,12 +16,11 @@ module.exports = {
   plugins: [
     'react'
   ],
-  ignorePatters: [
-    './postcss.config.js'
-  ],
+  ignorePatterns: ['.eslintrc.js', '.postcss.config.js', 'vite.config.js', 'package.json', 'tailwind.config.js'],
   rules: {
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/no-non-null-assertion': 'off'
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    'react/prop-types': 'off'
   }
 }
