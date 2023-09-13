@@ -2,14 +2,16 @@ import { useSearchParams } from 'react-router-dom'
 import TruckPnG from '../assets/truck.png'
 import { useMemo, useState } from 'react'
 import { getItems } from '../api/fetching'
+import { type IItems } from '../types/items.types'
 
 const SearchView = () => {
   const [searchParams, setSearchParams] = useSearchParams()
-  const [items, setItems] = useState([])
+  const [items, setItems] = useState<IItems>()
   const searchTerm = searchParams.get('search')
   useMemo(() => {
     getItems(searchTerm ?? '').then((data) => {
       setItems(data)
+      console.log(data)
     }).catch((err) => {
       console.log(err)
     })
