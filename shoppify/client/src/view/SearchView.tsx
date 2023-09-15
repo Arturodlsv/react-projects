@@ -18,7 +18,7 @@ const SearchView = () => {
     })
   }, [searchTerm])
   return (
-    <div className='w-full'>
+    <div className='w-full flex flex-col justify-center gap-6'>
       <header className='flex flex-col items-center justify-center gap-2 p-2'>
         <section className='flex gap-4 items-center justify-center'>
         <img src={TruckPnG} width={80} className="overflow-hidden" alt="" />
@@ -36,7 +36,7 @@ const SearchView = () => {
         </nav>
       </header>
       <main className='w-full flex justify-center items-center'>
-        <div className='flex w-full justify-center items-center gap-2 flex-col'>
+        <div className='flex w-full justify-center items-center gap-8 flex-col'>
           {items?.map((item) => (
             <ItemCard
               key={item.id}
