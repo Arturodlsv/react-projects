@@ -6,7 +6,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -21,11 +21,5 @@ model Products {
   brand String
   category String
   thumbnail String
-  images Images[]
-}
-
-model Images {
-  id Int @id @default(autoincrement())
-  product Products @relation(fields: [productId], references: [id])
-  productId Int
+  images String[]
 }
