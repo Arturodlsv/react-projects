@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "**/*.d.ts", "**/*.ts", ".eslintrc.cjs"],
+  "include": ["src", "**/*.d.ts", "**/*.ts", ".eslintrc.cjs", "./postcss.config.js"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
