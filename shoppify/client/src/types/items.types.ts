@@ -5,7 +5,7 @@ export interface IItemsCard {
   description: string
   thumbnail: string
   category: string
-  rating: 4
+  rating: number
 }
 
 export interface IItems {
@@ -16,5 +16,5 @@ export interface IItems {
   thumbnail: string
   image: string
   category: string
-  rating: 4
+  rating: number
 }

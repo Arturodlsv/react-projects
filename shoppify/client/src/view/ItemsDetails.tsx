@@ -21,19 +21,39 @@ const ItemsDetails = () => {
       })
   }, [id])
   return (
-    <div>
-      <div>
-        <section>
-          <img src={item?.thumbnail} alt="" />
-        </section>
-        <section className="flex flex-col gap-2 px-4">
-          <span>{item?.title}</span>
-          <span className='text text-justify'>{item?.description}</span>
+    <div className="h-full flex flex-col gap-4 bg-white">
+      <section className="h-2/5 overflow-hidden">
+        <img
+          src={item?.thumbnail}
+          className="w-full h-full object-fit overflow-hidden"
+          alt=""
+        />
+      </section>
+      <section className="flex flex-col gap-2 px-4 grow-[6]">
+        <div className="flex flex-col gap-1">
+          <h1 className="text-2xl font-bold">{item?.title}</h1>
+          <span className="font-semibold text-lg">
+            Rating:
+            <span className="font-semibold">
+              {item?.rating === 4 && '⭐⭐⭐⭐'}
+              {item?.rating === 3 && '⭐⭐⭐'}
+              {item?.rating === 2 && '⭐⭐'}
+              {item?.rating === 1 && '⭐'}
+            </span>
+          </span>
+        </div>
+        <div>
+          <p className="text text-justify">{item?.description}</p>
+        </div>
+        <div className="flex flex-col gap-4">
+          <section>
+            <span>Category: </span>
+            <span className="">{item?.category}</span>
+          </section>
+          <section></section>
           <span>{item?.price}</span>
-          <span>{item?.rating}</span>
-          <span>{item?.category}</span>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
   )
 }
