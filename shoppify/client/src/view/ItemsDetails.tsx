@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import { getItem } from '../api/fetching'
 import { useParams } from 'react-router-dom'
 import { type IItems } from '../types/items.types'
