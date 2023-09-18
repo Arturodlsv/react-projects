@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 const ItemCard: React.FC<IItemsCard> = ({
   category,
   id,
-  name,
+  title,
   price,
   thumbnail,
   description,
@@ -19,7 +19,7 @@ const ItemCard: React.FC<IItemsCard> = ({
           <img src={thumbnail} className='w-full' alt="" />
         </section>
         <section>
-          <span className="font-bold text-xl">{name}</span>
+          <span className="font-bold text-xl">{title}</span>
         </section>
         <section>
           <span className="font-bold text-base">${price}</span>

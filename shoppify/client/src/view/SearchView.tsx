@@ -93,7 +93,7 @@ const SearchView = () => {
               key={item.id}
               category={item.category}
               id={item.id}
-              name={item.name}
+              title={item.title}
               price={item.price}
               thumbnail={item.thumbnail}
               description={item.description}
