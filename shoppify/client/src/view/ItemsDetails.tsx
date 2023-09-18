@@ -11,16 +11,29 @@ const ItemsDetails = () => {
     return res
   }
   void useMemo(async () => {
-    await getDetails(id ?? '').then((data) => {
-      setItem(data)
-      console.log(data)
-    }).catch((err) => {
-      console.log(err)
-    })
+    await getDetails(id ?? '')
+      .then((data) => {
+        setItem(data)
+        console.log(data)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   }, [id])
   return (
     <div>
-      <h1>{item?.title}</h1>
+      <div>
+        <section>
+          <img src={item?.thumbnail} alt="" />
+        </section>
+        <section className="flex flex-col gap-2 px-4">
+          <span>{item?.title}</span>
+          <span className='text text-justify'>{item?.description}</span>
+          <span>{item?.price}</span>
+          <span>{item?.rating}</span>
+          <span>{item?.category}</span>
+        </section>
+      </div>
     </div>
   )
 }
