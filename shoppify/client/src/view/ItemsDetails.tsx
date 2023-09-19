@@ -29,7 +29,7 @@ const ItemsDetails = () => {
           alt=""
         />
       </section>
-      <section className="flex flex-col gap-2 px-4 grow-[6]">
+      <section className="flex flex-col gap-3 px-4 grow-[6]">
         <div className="flex flex-col gap-1">
           <h1 className="text-2xl font-bold">{item?.title}</h1>
           <span className="font-semibold text-lg">
@@ -42,16 +42,21 @@ const ItemsDetails = () => {
             </span>
           </span>
         </div>
-        <div>
-          <p className="text text-justify">{item?.description}</p>
+        <div className='bg-black bg-opacity-70 p-2 h-2/5'>
+          <p className="text text-justify tracking-wide leading-8 text-white">{item?.description}</p>
         </div>
         <div className="flex flex-col gap-4">
           <section>
-            <span>Category: </span>
-            <span className="">{item?.category}</span>
+            <span className='font-semibold'>Category: </span>
+            <span className="italic">{item?.category}</span>
           </section>
-          <section></section>
-          <span>{item?.price}</span>
+          <section>
+          <span className='font-semibold'>Price: </span>
+          <span className='tracking-wide'>{item?.price}</span>
+          </section>
+        </div>
+        <div className="flex justify-center items-center">
+          <button className='bg-blue-500 text-white font-bold py-2 px-4 rounded'>Add to Cart</button>
         </div>
       </section>
     </div>
