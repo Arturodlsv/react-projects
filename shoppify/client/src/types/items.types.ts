@@ -1,20 +1,20 @@
 export interface IItemsCard {
   id: number
-  name: string
+  title: string
   price: number
   description: string
   thumbnail: string
   category: string
-  rating: 4
+  rating: number
 }
 
 export interface IItems {
   id: number
-  name: string
+  title: string
   price: number
   description: string
   thumbnail: string
   image: string
   category: string
-  rating: 4
+  rating: number
 }
